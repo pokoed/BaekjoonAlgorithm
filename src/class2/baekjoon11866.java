@@ -11,7 +11,7 @@ public class baekjoon11866 {
 
         int N = sc.nextInt();
         int K = sc.nextInt();
-
+        sc.close();
         for (int i = 1; i <= N; i++) {
             q.add(i);
         }
