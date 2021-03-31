@@ -1,30 +1,39 @@
 package class2;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class baekjoon1920 {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int[] arr1 = new int[N];
-        for (int i = 0; i < N; i++) {
-            arr1[i] = sc.nextInt();
+        int n = sc.nextInt();
+        int[] A = new int[n];
+        for (int i = 0; i < n; i++) {
+            A[i] = sc.nextInt();
         }
-        int NN = sc.nextInt();
-        int[] arr2 = new int[NN];
-        for (int i = 0; i < NN; i++) {
-            arr2[i] = sc.nextInt();
-        }
-        boolean is = false;
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < NN; j++) {
-                if (arr1[i] == arr2[j]) {
+        Arrays.sort(A);
+        int m = sc.nextInt();
+        for (int i = 0; i < m; i++) {
+            int num = sc.nextInt();
+            int left = 0;
+            int right = A.length - 1;
+            boolean flag = false;
+            while (left <= right) {
+                int midIndex = (left + right) / 2;
+                int midValue = A[midIndex];
+                if (midValue > num) {
+                    right = midIndex - 1;
+                } else if (midValue < num) {
+                    left = midIndex + 1;
+                } else { //찾음
+                    flag = true;
                     System.out.println(1);
                     break;
-                } else {
-                    if (is) System.out.println(0);
-
                 }
+            }
+            if (!flag) {
+                System.out.println(0);
             }
         }
     }
