@@ -27,6 +27,7 @@ public class baekjoon1920 {
                 } else if (midValue < num) {
                     left = midIndex + 1;
                 } else { //찾음
+                    int aa = 0;
                     flag = true;
                     System.out.println(1);
                     break;
