@@ -1,0 +1,26 @@
+package class2;
+
+import java.util.Scanner;
+
+public class baekjoon4153 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            int z = sc.nextInt();
+
+            if (x + y + z == 0) break;
+            else if (x*x == y*y + z*z) {
+                System.out.println("right");
+            } else if (y*y == x*x + z*z) {
+                System.out.println("right");
+            } else if (z*z == x*x + y*y) {
+                System.out.println("right");
+            } else {
+                System.out.println("wrong");
+            }
+        }
+    }
+}
